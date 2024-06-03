@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/AuthFragment">
+
+    <fragment
+        android:id="@+id/Step"
+        android:name="com.yandex.mobius360quest.Step"
+        android:label="Terms of service"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/step_to_next"
+            app:destination="@id/ResetFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/HelloFragment"
+        android:name="com.yandex.mobius360quest.HelloFragment"
+        android:label="Ok, just press this button">
+
+        <action
+            android:id="@+id/step_to_next"
+            app:destination="@id/RotateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AnotherOne"
+        android:name="com.yandex.mobius360quest.Loading"
+        android:label="Enter your date of birth">
+
+        <action
+            android:id="@+id/step_to_next"
+            app:destination="@id/HelloFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AuthFragment"
+        android:name="com.yandex.mobius360quest.Auth"
+        android:label="Auth">
+
+        <action
+            android:id="@+id/step_to_next"
+            app:destination="@id/Step" />
+
+        <action
+            android:id="@+id/win"
+            app:destination="@id/WinFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/WinFragment"
+        android:name="com.yandex.mobius360quest.WinFragment"
+        />
+
+    <fragment
+        android:id="@+id/ResetFragment"
+        android:name="com.yandex.mobius360quest.Mail"
+        android:label="Reset password">
+
+        <action
+            android:id="@+id/step_to_next"
+            app:destination="@id/LockedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ComposeFragment"
+        android:name="com.yandex.mobius360quest.Compose"
+        android:label="Security check">
+
+        <action
+            android:id="@+id/step_to_next"
+            app:destination="@id/RotateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/RotateFragment"
+        android:name="com.yandex.mobius360quest.Rotate"
+        android:label="Landscape">
+
+        <action
+            android:id="@+id/step_to_next"
+            app:destination="@id/SomeAnotherCheckFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/AnimationFragment"
+        android:name="com.yandex.mobius360quest.Animation"
+        android:label="Animation"/>
+
+    <fragment
+        android:id="@+id/SomeAnotherCheckFragment"
+        android:name="com.yandex.mobius360quest.SomeAnotherCheck"
+        android:label="ServerCheck">
+
+        <action
+            android:id="@+id/step_to_next"
+            app:destination="@id/AnimationFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/LockedFragment"
+        android:name="com.yandex.mobius360quest.Locked"
+        android:label="Swipe to unlock">
+
+        <action
+            android:id="@+id/step_to_next"
+            app:destination="@id/AnotherOne"/>
+    </fragment>
+
+</navigation>
